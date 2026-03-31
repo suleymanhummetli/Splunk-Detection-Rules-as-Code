@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Sensitive_File_Access",
+  "search": "index=api_logs | where match(uri_path, \"\\\\.env$|\\\\.git/|\\\\.htaccess$|\\\\.config$|config\\\\.php\")",
+  "description": "Detects attempts to access configuration and hidden files",
+  "cron_schedule": "*/5 * * * *",
+  "earliest_time": "-5m",
+  "latest_time": "now"
+}
