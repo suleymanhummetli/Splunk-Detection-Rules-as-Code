@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Large_Post_Payload",
+  "search": "index=api_logs method=POST | where len(_raw) > 5000",
+  "description": "Detects unusually large POST requests",
+  "cron_schedule": "*/15 * * * *",
+  "earliest_time": "-15m",
+  "latest_time": "now"
+}
