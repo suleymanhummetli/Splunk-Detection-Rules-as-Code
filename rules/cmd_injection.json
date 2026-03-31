@@ -1,0 +1,8 @@
+{
+  "name": "Detect_OS_Command_Injection",
+  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)(;|\\\\||&)\\\\s*(whoami|cat|ls|pwd|id|netstat|wget|curl)\")",
+  "description": "Detects OS command execution attempts",
+  "cron_schedule": "*/5 * * * *",
+  "earliest_time": "-5m",
+  "latest_time": "now"
+}
