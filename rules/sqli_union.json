@@ -1,8 +1,0 @@
-{
-  "name": "Detect_SQL_Injection_Union",
-  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)union\\\\s+all\\\\s+select|union\\\\s+select\")",
-  "description": "Detects SQL Union-based injection attacks",
-  "cron_schedule": "*/5 * * * *",
-  "earliest_time": "-5m",
-  "latest_time": "now"
-}
