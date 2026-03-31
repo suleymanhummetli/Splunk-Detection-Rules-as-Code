@@ -37,7 +37,7 @@ def sync_rules():
                     "is_scheduled": 1,
                     "dispatch.earliest_time": rule_data['earliest_time'],
                     "dispatch.latest_time": rule_data['latest_time'],
-                    "actions": "email,webhook", # Ehtiyac olsa bura telegram da əlavə edilə bilər
+                    "actions": "webhook", # Ehtiyac olsa bura telegram da əlavə edilə bilər
                     "output_mode": "json"
                 }
 
