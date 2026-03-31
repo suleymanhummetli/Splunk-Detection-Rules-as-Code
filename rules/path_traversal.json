@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Path_Traversal",
+  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)\\\\.\\\\.\\\\/|\\\\.\\\\.\\\\\\\\|etc/passwd|win\\\\.ini\")",
+  "description": "Detects attempts to access system files",
+  "cron_schedule": "*/5 * * * *",
+  "earliest_time": "-5m",
+  "latest_time": "now"
+}
