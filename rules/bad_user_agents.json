@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Scanning_Tools",
+  "search": "index=api_logs | where match(user_agent, \"(?i)sqlmap|nmap|nikto|dirbuster|gobuster|python-requests\")",
+  "description": "Detects common hacking and scanning tools",
+  "cron_schedule": "*/10 * * * *",
+  "earliest_time": "-10m",
+  "latest_time": "now"
+}
