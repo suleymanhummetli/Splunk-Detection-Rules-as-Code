@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Brute_Force_Stat",
+  "search": "index=api_logs (status=401 OR status=404) | stats count as failures by src_ip | where failures > 30",
+  "description": "Detects IPs with high failure rate (30+ in 1 min)",
+  "cron_schedule": "*/2 * * * *",
+  "earliest_time": "-2m",
+  "latest_time": "now"
+}
