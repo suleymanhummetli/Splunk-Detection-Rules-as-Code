@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Log_Tampering_Attempts",
+  "search": "index=api_logs | where match(uri_path, \"truncate|clear|delete\\\\s+from\\\\s+logs\")",
+  "description": "Detects attempts to clear or tamper with logs via web",
+  "cron_schedule": "*/30 * * * *",
+  "earliest_time": "-30m",
+  "latest_time": "now"
+}
