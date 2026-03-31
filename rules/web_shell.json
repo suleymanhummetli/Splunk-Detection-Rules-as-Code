@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Web_Shell_Params",
+  "search": "index=api_logs | where match(uri_path, \"(?i)cmd=|exec=|shell=|run=|command=\")",
+  "description": "Detects common web shell execution parameters",
+  "cron_schedule": "*/5 * * * *",
+  "earliest_time": "-5m",
+  "latest_time": "now"
+}
