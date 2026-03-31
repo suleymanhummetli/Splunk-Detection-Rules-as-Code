@@ -1,0 +1,8 @@
+{
+  "name": "Detect_Mass_Enumeration",
+  "search": "index=api_logs | stats dc(uri_path) as unique_paths by src_ip | where unique_paths > 100",
+  "description": "Detects an IP visiting more than 100 unique paths in a short time",
+  "cron_schedule": "*/10 * * * *",
+  "earliest_time": "-10m",
+  "latest_time": "now"
+}
