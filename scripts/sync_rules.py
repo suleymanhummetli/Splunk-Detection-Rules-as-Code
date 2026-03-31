@@ -45,7 +45,7 @@ def sync_rules():
                 check_url = f"{API_URL}/{rule_data['name']}"
                 response = requests.get(check_url, auth=(SPLUNK_USER, SPLUNK_PASS), verify=False)
 
-                if response.status_status == 200:
+                if response.status_code == 200:
                     # Varsa - Update (POST)
                     print(f"Rule '{rule_data['name']}' artıq var. Yenilənir (Update)...")
                     res = requests.post(check_url, data=payload, auth=(SPLUNK_USER, SPLUNK_PASS), verify=False)
