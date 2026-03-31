@@ -1,0 +1,8 @@
+{
+  "name": "Detect_HTTP_Method_Anomaly",
+  "search": "index=api_logs | where method!=\"GET\" AND method!=\"POST\" AND method!=\"HEAD\"",
+  "description": "Detects unusual HTTP methods like PUT, DELETE, CONNECT",
+  "cron_schedule": "*/15 * * * *",
+  "earliest_time": "-15m",
+  "latest_time": "now"
+}
