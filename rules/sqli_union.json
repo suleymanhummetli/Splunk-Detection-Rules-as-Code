@@ -1,7 +1,7 @@
 {
   "name": "Detect_SQL_Injection_Union",
   "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)union\\\\s+all\\\\s+select|union\\\\s+select\")",
-  "description": "SQL Union-based injection attack detection - UPDATED VIA GITHUB",
+  "description": "SQL Union-based injection attack detection - UPDATED VIA GITHUB(V2)",
   "cron_schedule": "*/5 * * * *",
   "earliest_time": "-5m",
   "latest_time": "now"
