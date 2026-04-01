@@ -13,7 +13,7 @@ SPLUNK_USER = os.environ.get('SPLUNK_USER', 'hummatli')
 SPLUNK_PASS = os.environ.get('SPLUNK_PASS')
 
 RULES_DIR = "rules"
-API_URL = f"https://{SPLUNK_HOST}:{SPLUNK_PORT}/servicesNS/nobody/search/saved/searches"
+API_URL = f"https://{SPLUNK_HOST}:{SPLUNK_PORT}/servicesNS/hummatli/search/saved/searches"
 
 def sync_rules():
     if not SPLUNK_PASS:
