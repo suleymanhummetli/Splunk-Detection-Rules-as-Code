@@ -1,6 +1,6 @@
 {
   "name": "Detect_XSS_Advanced",
-  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(url, \"(?i)onerror=|onload=|onclick=|eval\\\\(|alert\\\\(|<script\")",
+  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)onerror=|onload=|onclick=|eval\\\\(|alert\\\\(|<script\")",
   "description": "Detects XSS payloads and event handlers,Uptaded descritpion",
   "cron_schedule": "*/5 * * * *",
   "earliest_time": "-5m",
