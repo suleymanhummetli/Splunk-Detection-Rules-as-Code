@@ -1,13 +1,15 @@
 {
   "name": "Detect_XSS_Advanced",
   "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)onerror|onload|onclick|eval|alert|<script\")",
-  "description": "Detects XSS payloads and event handlers,Uptaded descritpion",
-  "cron_schedule": "*/5 * * * *",
+  "description": "SOC Automation Ticket - XSS Detection",
+  "cron_schedule": "*/1 * * * *",
   "earliest_time": "rt-4h",
   "latest_time": "rt",
   "alert_type": "always",
   "alert_comparator": "greater than",
   "alert_threshold": "0",
   "actions": "script",
-  "action.script.filename": "sdp_ticket.py"
+  "action.script.filename": "sdp_ticket.py",
+  "alert.track": "1",
+  "is_scheduled": "1"
 }
