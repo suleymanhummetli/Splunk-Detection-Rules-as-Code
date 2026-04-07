@@ -1,8 +1,11 @@
 {
   "name": "Detect_SSRF_Metadata",
   "search": "index=api_logs | where match(uri_path, \"169\\\\.254\\\\.169\\\\.254|localhost|127\\\\.0\\\\.0\\\\.1\")",
-  "description": "Detects SSRF attempts against cloud metadata and localhost,Uptadable",
-  "cron_schedule": "*/5 * * * *",
-  "earliest_time": "-5m",
-  "latest_time": "now"
+  "description": "Detects SSRF attempts against cloud metadata and localhost",
+  "earliest_time": "-15m",
+  "latest_time": "now",
+  "cron_schedule": "*/1 * * * *",
+  "alert.suppress": "0",
+  "alert.digest_mode": "0",
+  "action.script.filename": "sdp_ticket.py"
 }
