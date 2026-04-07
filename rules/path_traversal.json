@@ -1,8 +1,11 @@
 {
   "name": "Detect_Path_Traversal",
-  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)\\\\.\\\\.\\\\/|\\\\.\\\\.\\\\\\\\|etc/passwd|win\\\\.ini\")",
-  "description": "Detects attempts to access system files",
-  "cron_schedule": "*/5 * * * *",
-  "earliest_time": "-5m",
-  "latest_time": "now"
+  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)\\\\.\\\\.\\\\.\\\\.\\\\/|\\\\.\\\\.\\\\.\\\\\\\\\\\\\\\\|etc/passwd|win\\\\.ini\")",
+  "description": "Detects attempts to access system files via Path Traversal",
+  "earliest_time": "-15m",
+  "latest_time": "now",
+  "cron_schedule": "*/1 * * * *",
+  "alert.suppress": "0",
+  "alert.digest_mode": "0",
+  "action.script.filename": "sdp_ticket.py"
 }
