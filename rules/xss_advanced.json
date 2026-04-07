@@ -4,9 +4,9 @@
   "description": "Detects XSS payloads and event handlers,Uptaded descritpion",
   "earliest_time": "rt-4h",
   "latest_time": "rt",
-  "actions": "script",
-  "action.script.filename": "sdp_ticket.py",
+  "alert_type": "always",
   "alert_comparator": "greater than",
   "alert_threshold": "0",
-  "alert_type": "always"
+  "actions": "script",
+  "action.script.filename": "sdp_ticket.py"
 }
