@@ -1,8 +1,12 @@
 {
   "name": "Detect_XSS_Advanced",
-  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)onerror=|onload=|onclick=|eval\\\\(|alert\\\\(|<script\")",
-  "description": "Detects XSS payloads and event handlers,Uptaded descritpion",
-  "cron_schedule": "*/5 * * * *",
-  "earliest_time": "-5m",
-  "latest_time": "now"
+  "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)onerror=|onload=|onclick=|eval\\\\\\\\(|alert\\\\\\\\(|<script\\")",
+  "description": "Detects XSS payloads and event handlers - AUTOMATED TICKET 2026",
+  "earliest_time": "rt-4h",
+  "latest_time": "rt",
+  "actions": "script",
+  "action.script.filename": "sdp_ticket.py",
+  "alert_comparator": "greater than",
+  "alert_threshold": "0",
+  "alert_type": "always"
 }
