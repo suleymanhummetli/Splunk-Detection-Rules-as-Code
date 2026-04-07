@@ -9,7 +9,6 @@
   "alert_comparator": "greater than",
   "alert_threshold": "0",
   "alert.suppress": "0",
-  "alert.suppress.period": "0s",
   "alert.digest_mode": "0",
   "actions": "script",
   "action.script.filename": "sdp_ticket.py"
