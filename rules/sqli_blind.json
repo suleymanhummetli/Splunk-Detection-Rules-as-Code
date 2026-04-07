@@ -1,8 +1,11 @@
 {
   "name": "Detect_SQL_Injection_Blind",
   "search": "index=api_logs | eval uri=urldecode(uri_path) | where match(uri, \"(?i)sleep\\\\(|benchmark\\\\(|pg_sleep\\\\(\")",
-  "description": "Detects time-based blind SQL injection,Uptade VIA Github(V2)",
-  "cron_schedule": "*/5 * * * *",
-  "earliest_time": "-5m",
-  "latest_time": "now"
+  "description": "Detects time-based blind SQL injection attacks",
+  "earliest_time": "-15m",
+  "latest_time": "now",
+  "cron_schedule": "*/1 * * * *",
+  "alert.suppress": "0",
+  "alert.digest_mode": "0",
+  "action.script.filename": "sdp_ticket.py"
 }
